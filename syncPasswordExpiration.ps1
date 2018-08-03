@@ -36,11 +36,11 @@ IF($O365Connection -eq $Null){
 ##Set O365 password policy
 $expirDayPolicy = 90
 $O365NotificationDays = 14
+$domain = "surgicalnotes.com"
 Set-MsolPasswordPolicy -ValidityPeriod $expirDayPolicy -NotificationDays $O365NotificationDays -DomainName $domain
 
 
 ForEach($ADUser in $ADUsers){
-    $domain = "surgicalnotes.com"
     $365User = "$ADUser@$domain"
 
     ##Get AD user expiration date
