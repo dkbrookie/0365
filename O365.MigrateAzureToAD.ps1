@@ -37,7 +37,7 @@ Try {
 }
 #endregion O365Connect
 
-$pass = Read-Host "Please enter the password you would like to use for all new local AD users:"
+$pass = Read-Host "Please enter the password you would like to use for all new local AD users"
 $DefaultPassword = (ConvertTo-SecureString $pass -AsPlainText -Force)
 $azureUsers = Get-AzureADUser
 $totalUsers = ($azureUsers).Count
