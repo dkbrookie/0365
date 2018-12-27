@@ -1,8 +1,10 @@
-$answer = Read-Host "Are you running this from the DC server you want to create the users on? (y/n)"
-If($answer -ne 'y') {
-  Write-Warning "This script needs to be ran on the DC you want the users created on. Please run this on your desired DC server. Exiting script."
-  Break
-}
+##powershell.exe -command "& {(new-object Net.WebClient).DownloadString('https://raw.githubusercontent.com/dkbrookie/o365/master/O365.MigrateAzureToAD.ps1')}"
+
+#$answer = Read-Host "Are you running this from the DC server you want to create the users on? (y/n)"
+#If($answer -ne 'y') {
+#  Write-Warning "This script needs to be ran on the DC you want the users created on. Please run this on your desired DC server. Exiting script."
+#  Break
+#}
 
 #region O365Connect
 Try {
