@@ -20,6 +20,8 @@ Try {
   }
 
   ## Test for an open O365 session, connect if no session is open.
+  Write-Host "You are about to be prompted for the O365 credentials of the tenant you want to get Azure AD users from..."
+  Start-Sleep 3
   $O365Connection = Get-PSSession
   IF($O365Connection -eq $Null){
       $cred = Get-Credential
@@ -119,7 +121,6 @@ ForEach($user in $azureUsers) {
   If(!$userTest) {
     Write-Output "Creating an AD account for $name"
     New-ADUser @NewUserParams
-    #New-ADUser -UserPrincipalName $UserName -SamAccountName $Username -Name $Name -GivenName $GivenName -SurName $SurName -Title $JobTitle -AccountPassword $DefaultPassword  -Enabled $True -ChangePasswordAtLogon $True -City $City -State $State -StreetAddress $StreedAddress -Department $Department -DisplayName $DisplayName -EmailAddress $Mail
   } Else {
     Write-Output "$Username already exists!"
   }
