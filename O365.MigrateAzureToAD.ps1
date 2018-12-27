@@ -37,8 +37,8 @@ Try {
 }
 #endregion O365Connect
 
-
-$DefaultPassword = (ConvertTo-SecureString "T3mpPs9999" -AsPlainText -Force)
+$pass = Read-Host "Please enter the password you would like to use for all new local AD users:"
+$DefaultPassword = (ConvertTo-SecureString $pass -AsPlainText -Force)
 $azureUsers = Get-AzureADUser
 $totalUsers = ($azureUsers).Count
 Write-Output "$totalUsers Azure AD users have been discovered"
