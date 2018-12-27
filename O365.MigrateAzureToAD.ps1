@@ -36,7 +36,7 @@ Try {
   Write-Error "There was an issue installing / connecting to msonline, read error log for details"
 }
 #endregion O365Connect
-
+Write-Warning "Passwords cannot be pulled from Azure AD Users, you must create a new password for all new users"
 $pass = Read-Host "Please enter the password you would like to use for all new local AD users"
 $DefaultPassword = (ConvertTo-SecureString $pass -AsPlainText -Force)
 $azureUsers = Get-AzureADUser
